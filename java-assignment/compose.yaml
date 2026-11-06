@@ -1,0 +1,30 @@
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: student_management
+      MYSQL_USER: student_app
+      MYSQL_PASSWORD: student_local_password
+      MYSQL_ROOT_PASSWORD: root_local_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  api:
+    build: .
+    environment:
+      DB_URL: jdbc:mysql://db:3306/student_management
+      DB_USERNAME: student_app
+      DB_PASSWORD: student_local_password
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  mysql_data:
