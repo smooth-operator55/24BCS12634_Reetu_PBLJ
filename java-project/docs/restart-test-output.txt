@@ -1,0 +1,4 @@
+PASS Fresh JVM restores two tasks
+PASS Edited fields and completion survive process restart
+PASS Restarted interface shows restored progress
+PASS: 3 checks (restart)

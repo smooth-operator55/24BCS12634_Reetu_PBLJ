@@ -1,0 +1,31 @@
+PASS Missing file loads as empty
+PASS Unicode, delimiters, identity and completion round trip
+PASS Empty list persists
+PASS Corrupt input is rejected without overwriting it
+PASS Empty state displays
+PASS Cancel add leaves storage empty
+PASS Add saves three tasks
+PASS Yesterday is overdue; today is not
+PASS Search ignores case and matches subject
+PASS Unmatched search displays empty state
+PASS Overdue filter selects unfinished past deadline
+PASS Complete action saves status
+PASS Reopen action saves status
+PASS Edit form is prefilled
+PASS Edit saves details and preserves ID and completion
+PASS Cancel edit preserves saved details
+PASS Blank title rejected (validation message)
+PASS Blank title rejected (no task saved)
+PASS Blank subject rejected (validation message)
+PASS Blank subject rejected (no task saved)
+PASS Oversized title rejected (validation message)
+PASS Oversized title rejected (no task saved)
+PASS Oversized subject rejected (validation message)
+PASS Oversized subject rejected (no task saved)
+PASS Impossible date rejected (validation message)
+PASS Impossible date rejected (no task saved)
+PASS Cancel delete preserves task
+PASS Confirm delete persists removal
+PASS Completed filter works
+PASS To-do filter works
+PASS: 30 checks (features)
